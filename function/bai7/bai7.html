@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai7</title>
+</head>
+<body>
+<script>
+
+        var teacher = {
+            firstName: "Duc",
+            lastName: "Anh",
+            age: 27,
+            say: function() {
+
+            }
+        };
+
+        var student = {
+            firstName: "Tung",
+            lastName: "Nguyen",
+            age: 26,
+            say: function(){}
+        };
+
+        var parent = {
+            firstName: "Hai",
+            lastName: "Dang",
+            age: 50,
+            say: function(){
+
+            }
+        };
+        
+        var aboutMe = function () {
+            document.write("Xin chao, toi la " + this.firstName +this.lastName + ". Nam nay toi " + this.age + " tuoi <br>")
+        };
+        teacher.say = aboutMe;
+        student.say = aboutMe;
+        parent.say = aboutMe;
+
+</script>
+</body>
+</html>

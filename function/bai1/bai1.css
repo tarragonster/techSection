@@ -1,0 +1,56 @@
+@font-face {
+    font-family: meFont;
+
+    src: url("../font/verdana.ttf");
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: meFont;
+}
+
+body{
+    background: #BFB8B0;
+}
+
+
+.head{
+    text-align: center;
+    font-size: 1vw;
+    margin-top: 17%;
+    margin-bottom: 1%;
+    color: #733646;
+}
+
+.box input{
+    width: 15%;
+    height: 23px;
+    border: 2px solid #733646;
+    border-radius: 7px;
+    color: #733646;
+    background-color: #BFB8B0;
+    font-weight: bold;
+    position: relative;
+    left: 43%;
+}
+
+.alert{
+    position: relative;
+    left: 43%;
+    color: #701212;
+    font-weight: bold;
+}
+
+.display{
+    margin-top: 1%;
+    text-align: center;
+    font-size: 1.2vw;
+    color: #733646;
+    font-weight: bold;
+}
+#result{
+    color: #591C44;
+}

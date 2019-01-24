@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+
+<script>
+    theInput = prompt("Please enter a number").split("");
+
+    document.write(minArray(theInput));
+
+function minArray(array){
+
+    var t = array[0];
+
+    for(var i=0;i<array.length;i++){
+
+        t = min2(t,array[i])
+    }
+
+    return t
+}
+
+function min2(a,b) {
+
+    if (a<b){
+        return a
+    }
+    return b
+}
+
+</script>
+
+</body>
+</html>
