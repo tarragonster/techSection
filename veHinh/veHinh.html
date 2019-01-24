@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve Hinh</title>
+</head>
+<body>
+<script>
+    function bai1(){
+
+        var n = prompt("Please enter 1 side of the triangle");
+
+        displayTriangle(n);
+    }
+
+    function displayTriangle(a){
+
+        for (var i = 1; i<=a; i++){
+            doPrint("*",i);
+            document.write("<br>")
+        }
+    }
+
+    function doPrint(string,number){
+
+        for (var i=0; i<number;i++){
+            document.write(string)
+        }
+    }
+
+    function bai2(){
+
+        width = prompt("Please enter the width of rectangle");
+        height = prompt("Please enter the height of rectangle");
+
+        theRectangle(width,height);
+        document.write("<br>");
+    }
+
+    function theRectangle(a,b){
+
+        doPrint("*",a);
+        document.write("<br>");
+
+        for (var i=0; i<b-2;i++){
+            doPrint("*",1);
+            doPrint("&nbsp;&nbsp",a-2);
+            doPrint("*",1);
+            document.write("<br>")
+        }
+        doPrint("*",a);
+    }
+
+    function bai3(){
+
+        var height = prompt("Please enter a number");
+
+        specialTriangle(height);
+
+        document.write("<br>")
+    }
+
+    function specialTriangle(a){
+    var theSpace = 0;
+
+        for(var j=a*2-1;j>0;j = j-2){
+
+            doPrint("*",j);
+            theSpace++;
+            document.write("<br>");
+            doPrint("&nbsp;&nbsp",theSpace)
+        }
+    }
+
+    function bai4(){
+
+        var n = prompt("Please enter a number");
+
+        document.write(theShape(n));
+
+    }
+
+    function theShape(theWidth){
+
+        var theArray = [];
+        var display = "";
+
+        for (var j= 0; j<theWidth;j++){
+            theArray[j] = [];
+            for (var i= 0;i<theWidth;i++){
+
+                if(i == j || i == theWidth-j-1){
+
+                    theArray[j][i]="*"
+                }else{
+                    theArray[j][i] = "&nbsp;&nbsp"
+                }
+            }
+        }
+        for (var t =0; t<j;t++){
+            display = display + arrToString(theArray[t]) + "<br>";
+        }
+        return display
+    }
+
+    function arrToString(arr){
+
+        var genString ="";
+
+        for(var i = 0; i< arr.length; i++){
+            genString = genString + arr[i]
+        }
+        return genString;
+    }
+
+    function bai5(){
+
+        var k = prompt("Try enter a number, please!");
+
+        document.write(butterfly(k));
+    }
+
+    function butterfly(theNum){
+
+        var theArr = [];
+        var illust = "";
+        var proxy = [];
+
+        for (var i=0;i<theNum;i++){
+            theArr[i] = [];
+            for (var j=0;j<theNum;j++){
+
+                if(j == i || j == theNum-i-1){
+                    theArr[i][j] = "*"
+                }else{
+                    theArr[i][j] = "&nbsp;&nbsp"
+                }
+            }
+        }
+        for (var t =0; t<i;t++){
+
+            illust = illust + arrToString(theArr[t]) + "<br>";
+        }
+        return illust;
+    }
+
+</script>
+
+</body>
+</html>

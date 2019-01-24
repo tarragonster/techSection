@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    var count = 10;
+    numb = prompt("Please enter a number!");
+
+    document.write(duplicate(numb,count));
+
+    function duplicate(entry,loop) {
+
+        var finalNumb = entry;
+
+        for(var i=0;i<loop-1;i++){
+
+            finalNumb = finalNumb+"-"+entry
+        }
+        return finalNumb
+    }
+
+
+</script>
+
+</body>
+</html>

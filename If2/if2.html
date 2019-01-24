@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if2</title>
+    <script src="../meLib/meLib.js"></script>
+</head>
+<body>
+<script>
+
+    function bai1() {
+
+        var now = new Date();
+
+        var date = now.getDate();
+        var month = now.getMonth() +1;
+        var year = now.getFullYear();
+
+        document.write(date + "-" + month + "-" + year + "<br>");
+
+        getSeasons(month)
+    }
+
+    function getSeasons(testMonth){
+
+    switch (testMonth){
+        case 3:
+        case 4:
+        case 5:
+            document.write("it'Spring");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            document.write("it's Summer");
+            break;
+        case 9:
+        case 10:
+        case 11:
+            document.write("it's Autumn");
+            break;
+        case 12:
+        case 1:
+        case 2:
+            document.write("it' Winter");
+            break;
+    }
+    }
+
+    function bai2(){
+
+        var thePara = prompt("Please enter anything!");
+
+        if(checkStringNum(thePara) == "number"){
+
+            document.write("The string contain numbers! <br>")
+        }else{
+            document.write("The string has no number included <br>");
+
+            thePara = String(thePara);
+        }
+
+        if (countElString(thePara) <10){
+            document.write("Display: " + thePara)
+        }else{
+            document.write("Display: " + cutString(thePara,10) + "...")
+        }
+    }
+
+    function bai3(){
+
+        var x = prompt("Please enter your grade here!");
+        var mark;
+
+        if (0<=x<=3.9){
+            mark = "F"
+        }
+        if (4<=x<=5.4){
+            mark = "D"
+        }
+        if(5.5<=x<=6.9){
+            mark = "C"
+        }
+        if(7<=x<=8.4){
+            mark = "B"
+        }
+        if(8.5<=x<=10){
+            mark = "A"
+        }
+        document.write("You got an " + mark);
+    }
+    
+    function bai4() {
+
+    var nameCountry = prompt("Please enter the name of a country");
+
+        document.write("The translation for hello in " + nameCountry + " is "+ translate(nameCountry))
+    }
+
+    function translate(countryCode){
+        var foreignWord;
+
+        switch(countryCode){
+            case "chinese":
+            case "Chinese":
+                foreignWord = "你好";
+                break;
+            case "korean":
+            case "Korean":
+                foreignWord = "여보세요";
+                break;
+            case "japanese":
+            case "Japanese":
+                foreignWord = "こんにちは";
+                break;
+            case "greek":
+            case "Greek":
+                foreignWord = "γεια σας";
+                break;
+            case "romanian":
+            case "Romanian":
+                foreignWord = "salut";
+                break;
+            default:
+                foreignWord = " Xin Chào";
+                break;
+        }
+        return foreignWord
+    }
+
+    function bai5(){
+
+        var arr = [false,false,false,true,false,false,true,false];
+        var count = 0;
+        do{
+            count++
+
+        }while (arr[count] === false);
+
+        document.write("The true's index position in the Array is " + count);
+    }
+    function bai6(){
+
+        var count = 1;
+        var arr = [];
+        var i = 0;
+
+        do{
+            arr[i] = count++;
+            if (count%2 ==0){
+               document.write(String(arr[i]).fontcolor("red") + "<br>");
+            }else{
+                document.write(String(arr[i]).fontcolor("green")  + "<br>");
+            }
+            i++;
+        }while (count<=100);
+
+    }
+</script>
+
+</body>
+</html>

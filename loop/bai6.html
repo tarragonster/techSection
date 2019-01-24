@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+<script>
+    input = prompt("Please enter a big number").split(" ");
+
+
+    document.write(input,"<br>");
+    document.write(takeOdd(input));
+
+function takeOdd(a) {
+
+    for(var i=0;i<a.length;i++){
+
+        a[i] = a[i]%2
+    }
+return a
+}
+
+
+
+</script>
+</body>
+</html>

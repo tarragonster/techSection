@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    function bai1(){
+
+        firstNum = prompt("Please enter 1st number");
+        secondNum = prompt("Please enter 2nd number");
+
+        if(isNaN(firstNum,secondNum)){
+
+            document.write("Please try again with numbers")
+        }else{
+            document.write("The greater number is: ",max2(firstNum,secondNum))
+        }
+    }
+
+    function max2(a,b){
+
+        if (a>b){
+            return a
+        }
+        return b
+    }
+
+    function min2(a,b){
+
+        if (a<b){
+            return a
+        }
+        return b
+    }
+
+    function bai2(){
+
+        var input = parseInt(prompt("Please enter a number"));
+
+        if(Number.isInteger(input) && input > 0){
+
+            document.write(factorial(input))
+        }else{
+            document.write("Positive integer number please!")
+        }
+    }
+
+    function factorial(a){
+        var factorialNum = 1;
+
+        for(var i=1;i<=a;i++){
+
+            factorialNum = factorialNum*i
+
+        }
+        return factorialNum
+    }
+
+    function bai3(){
+        input = prompt("Please enter a long number").split("");
+
+        newArray = theEvenArray(input);
+
+        document.write(sorting(newArray));
+    }
+
+    function theEvenArray(a){
+        var array =[];
+
+        for(var i=0;i<a.length;i++){
+
+            if (a[i]%2 ==0){
+
+                array.push(a[i]);
+            }
+        }
+        return array
+    }
+
+    function sorting(arr){
+
+        for(var i=0;i<arr.length;i++){
+            for(var j=i;j<arr.length;j++){
+                t = arr[i];
+                arr[i] = min2(arr[i],arr[j]);
+
+                if(arr[i]===arr[j]){
+                    arr[j] = t
+                }
+            }
+        }
+        return arr
+    }
+
+    function bai4(){
+
+        var user = {
+
+            userName:null,
+            password: null,
+            confirm: null,
+        };
+
+        user.userName = prompt("Please enter your username");
+        user.password = prompt("Please enter your password");
+        user.confirm = prompt("Please confirm your password");
+
+        if (user.userName.split("").length > 20){
+            alert("username must be less than 20 characters!");
+        } else if (user.password.split("").length < 6 || user.password.split("").length > 32){
+            alert("password must be greater than 6 characters  and less than 32 characters")
+        } else if(user.password !==  user.confirm){
+            alert("your password is different with the your confirmation")
+        }else{
+            alert("welcome "+ user.userName)
+        }
+    }
+
+</script>
+
+</body>
+</html>
