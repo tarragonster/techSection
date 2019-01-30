@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    background-image: url("./img/background..jpg");
+}
+
+
+#wrap{
+
+    max-width: 25%;
+    margin-left: 8%;
+    margin-top: 13%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+#theWheel{
+
+    width: 100%;
+    max-width: 100%;
+    padding-top: 100%;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    transform: rotate(15deg);
+    border-style: solid;
+    border-width: 0.7vw;
+    border-color: white;
+}
+#pic1{
+    position: absolute;
+    max-width: 16%;
+    top: 6%;
+    left: 33%;
+    transform: rotate(-15deg);
+}
+#pic2{
+    position: absolute;
+    max-width: 13%;
+    top: 17%;
+    left: 18%;
+    transform: rotate(-45deg);
+}
+#pic3 {
+    position: absolute;
+    max-width: 16%;
+    top: 16%;
+    left: 68%;
+    transform: rotate(45deg);
+}
+#pic4 {
+    position: absolute;
+    max-width: 15%;
+    top: 6%;
+    left: 52%;
+    transform: rotate(15deg);
+}
+.firstPic{
+    width: 100%;
+
+}
+
+
+.half1{
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
+    background-color: transparent;
+    padding-top: 50%;
+    overflow: hidden;
+}
+
+.half1 div.section{
+    position: absolute;
+    width: 50%;
+    padding-top: 50%;
+    bottom: 0;
+
+}
+
+.half1 div.section:nth-child(1){
+
+    background-color: #8E2800;
+
+}
+.half1 div.section:nth-child(2){
+
+    background-color: #B64926;
+    transform: rotate(30deg);
+
+    transform-origin: 100% 100%;
+}
+.half1 div.section:nth-child(3){
+
+    background-color: #FFB03B;
+    transform: rotate(60deg);
+
+    transform-origin: 100% 100%;
+}
+.half1 div.section:nth-child(4){
+
+    background-color: #FFF0A5;
+    transform: rotate(90deg);
+
+    transform-origin: 100% 100%;
+}
+.half1 div.section:nth-child(5){
+
+    background-color: #572200;
+    transform: rotate(120deg);
+
+    transform-origin: 100% 100%;
+}
+.half1 div.section:nth-child(6){
+
+    background-color: #BF883C;
+    transform: rotate(150deg);
+
+    transform-origin: 100% 100%;
+}
+
+
+.half2{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: transparent;
+    padding-top: 50%;
+    overflow: hidden;
+}
+.half2 div.section{
+    position: absolute;
+    width: 50%;
+    padding-top: 50%;
+    bottom: 0;
+
+}
+.half2 div.section:nth-child(1){
+
+    background-color: #468966;
+
+}
+.half2 div.section:nth-child(2){
+
+    background-color: #1E2D40;
+    transform: rotate(-30deg);
+
+    transform-origin: 100% 0%;
+}
+.half2 div.section:nth-child(3){
+
+    background-color: #87B2A1;
+    transform: rotate(-60deg);
+
+    transform-origin: 100% 0%;
+}
+.half2 div.section:nth-child(4){
+
+    background-color: #F2CF66;
+    transform: rotate(-90deg);
+
+    transform-origin: 100% 0%;
+}
+.half2 div.section:nth-child(5){
+
+    background-color: #28403D;
+    transform: rotate(-120deg);
+
+    transform-origin: 100% 0%;
+}
+.half2 div.section:nth-child(6){
+
+    background-color: #635F9C;
+    transform: rotate(-150deg);
+
+    transform-origin: 100% 0%;
+}
+
+#spin{
+    position: absolute;
+    padding-top: calc(50% - 2.25vw);
+    left: calc(50% - 2.25vw);
+}
+
+#spinButton{
+
+    position: absolute;
+    width: 6vw;
+    height: 6vw;
+
+    text-decoration: none;
+    outline: none;
+    font-size: 2vw;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #8D6D67;
+    border-style: solid;
+    border-width: 0.5vw;
+    border-color: white;
+    cursor: pointer;
+
+    font-weight: bold;
+    color: white;
+}
+#spinButton:active {
+
+    font-size: 1.8vw;
+    transition: 0s linear;
+
+    width: 5.8vw;
+    height: 5.8vw;
+}
+#spinButton:hover{
+
+    border-color: #D9D8CA;
+    color: #D9D8CA;
+    transition: 0.2s ease-in-out ;
+}
+
+@keyframes test{
+    0%, 100%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(55deg);
+    }
+}
+#pointer{
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    background-color: white;
+    transform: rotate(45deg);
+    left: 1.5vw;
+    animation: test 0.5s ;
+}

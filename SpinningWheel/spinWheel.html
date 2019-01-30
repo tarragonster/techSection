@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="spinWheel.css">
+</head>
+<body>
+
+    <div id="wrap">
+        <div id = "theWheel">
+            <div class="half1">
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+            </div>
+            <div class="half2">
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+                <div class="section"></div>
+            </div>
+
+            <div id="pic1">
+                <img class="firstPic" src="./img/helmet.svg" alt="helmet">
+            </div>
+            <div id="pic2">
+                <img class="firstPic" src="./img/chest.svg" alt="chest">
+            </div>
+            <div id="pic3">
+                <img class="firstPic" src="./img/helmet.svg" alt="helmet">
+            </div>
+            <div id="pic4">
+                <img class="firstPic" src="./img/shield.svg" alt="helmet">
+            </div>
+        </div>
+        <div id="spin">
+            <div id="pointer"></div>
+            <button id="spinButton" onclick="startSpin()">Spin</button>
+        </div>
+    </div>
+
+    <script>
+        var wheel = document.getElementById("theWheel");
+        var click = 0;
+        var turn = 1800;
+        var maxNum;
+
+
+        function startSpin(){
+
+            click++;
+
+            maxNum = Math.floor(Math.random()*360 + 1 -1);
+
+            var theDegree = "rotate(" + (turn*click + maxNum) +"deg)";
+
+            wheel.style.transform = theDegree;
+            wheel.style.transition = "all 5s cubic-bezier(0.3, 0.76, 0.91, 1) 0s";
+
+        }
+
+        wheel.addEventListener("transitionend", nextEvent);
+
+
+        function nextEvent(){
+            if(maxNum <= 30){
+                alert("worrier won")
+            }else if( maxNum <= 60){
+                alert("you got the gold")
+            }else if(maxNum <= 90){
+                alert("you got the prize2")
+            }else if(maxNum <= 120){
+                alert("you got the prize3")
+            }else if(maxNum <= 150){
+                alert("you got the prize4")
+            }else if(maxNum <= 180){
+                alert("you got the prize5")
+            }else if(maxNum <= 210){
+                alert("you got the prize6")
+            }else if(maxNum <= 240){
+                alert("you got the prize7")
+            }else if(maxNum <= 270){
+                alert("you got the prize8")
+            }else if(maxNum <= 300){
+                alert("you got the prize9")
+            }else if(maxNum <= 330){
+                alert("worrier 2 won")
+            }else{
+                alert("you got the prize11")
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
