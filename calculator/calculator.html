@@ -2,9 +2,377 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="calculator.css">
 </head>
 <body>
+
+    <div id="background">
+        <div id="main">
+            <div><input type="text" id ="display" disabled></div>
+            <div id="row1" class="row">
+                <button class="button" onclick="reset()">ce</button>
+                <button class="button" onclick="backSpace()">e</button>
+                <button class="button" onclick="theMemo()">M</button>
+                <button id="percent" class="button" onclick="numPad(this)">%</button>
+                <button id="factorial" class="button" onclick="numPad(this)">!</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="numPad(this)">7</button>
+                <button class="button" onclick="numPad(this)">8</button>
+                <button class="button" onclick="numPad(this)">9</button>
+                <button id="division" class="button" onclick="numPad(this)">&#247</button>
+                <button id="theSqrt" class="button" onclick="numPad(this)">&#8730</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="numPad(this)">4</button>
+                <button class="button" onclick="numPad(this)">5</button>
+                <button class="button" onclick="numPad(this)">6</button>
+                <button id="multiply" class="button" onclick="numPad(this)">&#215</button>
+                <button id = "square" class="button" onclick="numPad(this)">&#178</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="numPad(this)">1</button>
+                <button class="button" onclick="numPad(this)">2</button>
+                <button class="button" onclick="numPad(this)">3</button>
+                <button class="button" onclick="numPad(this)">-</button>
+                <button class="button" onclick="numPad(this)">(</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="numPad(this)">0</button>
+                <button class="button" onclick="numPad(this)">.</button>
+                <button id="equal" class="button" onclick="equal()">=</button>
+                <button class="button" onclick="numPad(this)">+</button>
+                <button class="button" onclick="numPad(this)">)</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var pArray = [];
+        var display = document.getElementById("display");
+        var result;
+
+        var division = document.getElementById("division").innerHTML;
+        var multiply = document.getElementById("multiply").innerHTML;
+        var square = document.getElementById("square").innerHTML;
+        var factorial = document.getElementById("factorial").innerHTML;
+        var sqrt = document.getElementById("theSqrt").innerHTML;
+        var percent = document.getElementById("percent").innerHTML;
+
+        function reset(){
+            pArray = [];
+            display.value = arrToString(pArray);
+        }
+
+        function theMemo(){
+
+            pArray.push(result);
+        if(pArray[pArray.length-1] === result && pArray[pArray.length-2] === result) {
+                pArray.pop();
+                pArray[pArray.length - 1] = result
+            }
+            display.value = arrToString(pArray);
+        }
+
+        function backSpace(){
+            pArray.pop();
+            display.value = arrToString(pArray);
+        }
+
+
+
+        function numPad(button){
+
+
+                pArray.push(button.innerHTML);
+
+                if(pArray[pArray.length-1] ==="-" && pArray[pArray.length-2] ==="+"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = "-"
+                }else if(pArray[pArray.length-1] ==="+" && pArray[pArray.length-2] ==="-"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = "+"
+                }else if(pArray[pArray.length-1] ==="-" && pArray[pArray.length-2] ==="-") {
+                    pArray.pop();
+                    pArray[pArray.length - 1] = "-"
+                }else if(pArray[pArray.length-1] ==="+" && pArray[pArray.length-2] ==="+") {
+                    pArray.pop();
+                    pArray[pArray.length - 1] = "+"
+                }
+                if(pArray[pArray.length-1] ==="-" && pArray[pArray.length-2] === division){
+                    pArray.pop();
+                    pArray[pArray.length-1] = "-"
+                }else if(pArray[pArray.length-1] === division && pArray[pArray.length-2] ==="-"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = division
+                }else if(pArray[pArray.length-1] === division && pArray[pArray.length-2] === division) {
+                    pArray.pop();
+                    pArray[pArray.length - 1] = division
+                }
+                if(pArray[pArray.length-1] ==="+" && pArray[pArray.length-2] === division){
+                    pArray.pop();
+                    pArray[pArray.length-1] = "+"
+                }else if(pArray[pArray.length-1] ===division && pArray[pArray.length-2] ==="+"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = division
+                }
+                if(pArray[pArray.length-1] ==="-" && pArray[pArray.length-2] === multiply){
+                    pArray.pop();
+                    pArray[pArray.length-1] = "-"
+                }else if(pArray[pArray.length-1] === multiply && pArray[pArray.length-2] ==="-"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = multiply
+                }else if(pArray[pArray.length-1] === multiply && pArray[pArray.length-2] === multiply) {
+                    pArray.pop();
+                    pArray[pArray.length - 1] = multiply
+                }
+                if(pArray[pArray.length-1] ==="+" && pArray[pArray.length-2] === multiply){
+                    pArray.pop();
+                    pArray[pArray.length-1] = "+"
+                }else if(pArray[pArray.length-1] === multiply && pArray[pArray.length-2] ==="+"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = multiply
+                }
+                if(pArray[pArray.length-1] === division && pArray[pArray.length-2] === multiply){
+                    pArray.pop();
+                    pArray[pArray.length-1] = division
+                }else if(pArray[pArray.length-1] === multiply && pArray[pArray.length-2] === division){
+                    pArray.pop();
+                    pArray[pArray.length-1] = multiply
+                }
+
+                if(pArray[pArray.length-1] ==="." && pArray[pArray.length-2] ==="."){
+                    pArray.pop();
+                }
+
+                if(pArray[pArray.length-1] === square && pArray[pArray.length-2] === square){
+                    pArray.pop();
+                }
+
+                if(pArray[pArray.length-1] === factorial && pArray[pArray.length-2] === "+"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = factorial
+                }
+                if(pArray[pArray.length-1] === factorial && pArray[pArray.length-2] === "-"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = factorial
+                }
+                if(pArray[pArray.length-1] === factorial && pArray[pArray.length-2] === multiply){
+                    pArray.pop();
+                    pArray[pArray.length-1] = factorial
+                }
+                if(pArray[pArray.length-1] === factorial && pArray[pArray.length-2] === division){
+                    pArray.pop();
+                    pArray[pArray.length-1] = factorial
+                }
+
+                if(pArray[pArray.length-1] === percent && pArray[pArray.length-2] === "+"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = percent
+                }
+                if(pArray[pArray.length-1] === percent && pArray[pArray.length-2] === "-"){
+                    pArray.pop();
+                    pArray[pArray.length-1] = percent
+                }
+                if(pArray[pArray.length-1] === percent && pArray[pArray.length-2] === multiply){
+                    pArray.pop();
+                    pArray[pArray.length-1] = percent
+                }
+                if(pArray[pArray.length-1] === percent && pArray[pArray.length-2] === division){
+                    pArray.pop();
+                    pArray[pArray.length-1] = percent
+                }
+
+
+                if(pArray[pArray.length-2] === factorial && pArray[pArray.length-1] !== division
+                    && pArray[pArray.length-1] !== multiply && pArray[pArray.length-1] !== "+"
+                    && pArray[pArray.length-1] !== "-" && pArray[pArray.length-1] !== factorial
+                    && pArray[pArray.length-1] !== square && pArray[pArray.length-1] !== percent){
+                    pArray.push(pArray[pArray.length-1]);
+                    pArray[pArray.length-2] = multiply
+                }
+
+                if(pArray[pArray.length-2] === percent && pArray[pArray.length-1] !== division
+                    && pArray[pArray.length-1] !== multiply && pArray[pArray.length-1] !== "+"
+                    && pArray[pArray.length-1] !== "-" && pArray[pArray.length-1] !== factorial
+                    && pArray[pArray.length-1] !== square && pArray[pArray.length-1] !== percent){
+                    pArray.push(pArray[pArray.length-1]);
+                    pArray[pArray.length-2] = multiply
+                }
+
+                if(pArray[0] === multiply){
+                    pArray[0] = "0";
+                    pArray[1] = multiply;
+                }
+                if(pArray[0] === division){
+                    pArray[0] = "0";
+                    pArray[1] = division;
+                }
+                if(pArray[0] === factorial){
+                    pArray[0] = "0";
+                    pArray[1] = factorial;
+                }
+                if(pArray[0] === square){
+                    pArray[0] = "0";
+                    pArray[1] = square;
+                }
+                if(pArray[0] === percent){
+                    pArray[0] = "0";
+                    pArray[1] = percent;
+                }
+
+                if(pArray[0] === "."){
+                    pArray[0] = "0";
+                    pArray[1] = ".";
+                }
+
+                if(pArray[0] === "0" && (pArray[1] === "0" || pArray[1] === "1"
+                    || pArray[1] === "2" || pArray[1] === "3" || pArray[1] === "4"
+                    || pArray[1] === "5" || pArray[1] === "6" || pArray[1] === "7"
+                    || pArray[1] === "8" || pArray[1] === "9")){
+                    pArray[0] = pArray[1];
+                    pArray.pop();
+                }
+
+
+                if(pArray[0] === result && pArray[1]===button.innerHTML && pArray[1]!=="+" && pArray[1]!=="-"
+                    && pArray[1]!== multiply && pArray[1]!== division
+                    && pArray[1]!== factorial && pArray[1]!== square){
+                    pArray[0] = button.innerHTML;
+                    pArray.pop();
+                }
+
+                if((pArray[pArray.length-3] === "+" || pArray[pArray.length-3] === "-"
+                    || pArray[pArray.length-3] === multiply || pArray[pArray.length-3] === division)
+                    && pArray[pArray.length -2] === "0"
+                    && (pArray[pArray.length -1] ==="0" || pArray[pArray.length -1] ==="1"
+                    || pArray[pArray.length -1] ==="2" || pArray[pArray.length -1] ==="3"
+                    || pArray[pArray.length -1] ==="4"|| pArray[pArray.length -1] ==="5"
+                    || pArray[pArray.length -1] ==="6" || pArray[pArray.length -1] ==="7"
+                    || pArray[pArray.length -1] ==="8" || pArray[pArray.length -1] ==="9")){
+                    pArray[pArray.length -2] = pArray[pArray.length -1];
+                    pArray.pop()
+                }
+
+
+                display.value = arrToString(pArray)
+        }
+
+        function arrToString(arr){
+
+            var genString ="";
+
+            for(var i = 0; i< arr.length; i++){
+                genString = genString + arr[i]
+            }
+            return genString;
+        }
+
+        function equal(){
+
+                for(var i = 0; i< pArray.length;i++){
+
+                    if(pArray[i]=== division){
+                        pArray[i] = "/"
+                    }
+                    if(pArray[i]=== multiply){
+                        pArray[i] = "*"
+                    }
+
+                    if(pArray[i] === sqrt){
+                        pArray[i] = "Math.sqrt(";
+
+                        if(pArray[i+1] ==="("){
+
+                        }
+                            do{
+                                i++;
+                                if(pArray[i] === "+" || pArray[i] === "-"
+                                    || i === pArray.length || pArray[i] === multiply
+                                    || pArray[i] === division){
+                                    pArray.splice(i,0,")")
+                                }
+                            }while (pArray[i] !== "+" && pArray[i] !== "-"
+                            && i <= pArray.length && pArray[i] !== division
+                            && pArray[i] !== multiply && pArray[i] !== ")")
+                    }
+                    if(pArray[i] === square){
+                        pArray[i] ="**2"
+                    }
+
+                    if(pArray[i] === percent){
+                        pArray[i] ="*0.01"
+                    }
+
+                    if(pArray[i] === factorial){
+                        pArray[i] = ")";
+                        
+                        if(pArray[i-1] ===")"){
+
+                            if(checkElement(i,"(")){
+                                do{
+                                    i--;
+                                    if(pArray[i-1] === "(" || pArray[i-1] === "factor("){
+                                        pArray.splice(i-1,0,"factor(")
+                                    }
+
+                                }while (pArray[i] !== "(" && pArray[i] !== "factor(")
+                            }else{
+                                pArray.splice(0,0,"factor((")
+                            }
+                            
+                        }else{
+                            do{
+                                i--;
+
+                                if(pArray[i-1] === "+" || pArray[i-1] === "-"
+                                    || i === 0 || pArray[i-1] === multiply
+                                    || pArray[i-1] === division){
+                                    pArray.splice(i,0,"factor(")
+                                }
+
+                            }while(pArray[i] !== "+" && pArray[i] !== "-"
+                            && i >= 0 && pArray[i] !== division
+                            && pArray[i] !== multiply)
+
+                        }
+                    }
+                }
+
+            result = eval(arrToString(pArray)).toString();
+
+            display.value = result;
+
+                pArray = [];
+                pArray[0] = result;
+        }
+
+        function factor(n){
+            var num = 1;
+
+            if(n == 0){
+                return 1
+            }else{
+                for (var i = 1; i <= n;i++){
+                    num = num*i;
+                }
+                return num
+            }
+        }
+
+        function checkElement(lastIndex, checker){
+            for(var i = 0; i < lastIndex;i++){
+                if(pArray[i] === checker){
+                    return true
+                }
+            }
+            return false
+        }
+
+
+    </script>
+
 
 </body>
 </html>
