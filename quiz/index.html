@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+<div id="container">
+    <div>
+        <p id="question">In what year was the "@" chosen for its use in email addresses?</p>
+    </div>
+    <div id="set">
+        <button class="button hover" onclick="display(this)">&#9724; 1976</button><br>
+        <button class="button hover" onclick="switchPage()">&#9724; 1972</button><br>
+        <button class="button hover" onclick="display(this)">&#9724; 1984</button><br>
+        <button class="button hover" onclick="display(this)">&#9724; 1982</button><br>
+        <button class="button hover" onclick="display(this)">&#9724; 1980</button><br>
+    </div>
+    <div id="box">
+        <span id="text"></span>
+    </div>
+        <button class="button" id="errorButton" disabled onclick="refresh()">The quiz show</button>
+</div>
+<script>
+    var prom = document.getElementById("text");
+    var errorButton = document.getElementById("errorButton");
+    var button = document.getElementsByClassName("button");
+
+    function switchPage(){
+
+        window.location.href = "http://localhost:63342/baiTap/quiz/congrats.html?_ijt=t6lk24d00o31cgl3e2oi5feoea";
+    }
+
+    function display(chosenButton){
+
+        chosenButton.style.background = "#48453C";
+        chosenButton.style.color = "#D6D1B8";
+        for(var i = 0; i<5; i++){
+            button[i].disabled = true;
+            button[i].classList.remove("hover");
+        }
+
+        prom.innerHTML = " \u25B6 The answer is incorrect";
+        errorButton.disabled = false;
+        errorButton.style.background = "#690003";
+        errorButton.style.color = "#D6D1B8";
+        errorButton.innerText = "\u25C6 \u00A0 Click to try again \u00A0 \u25C6"
+    }
+    function refresh(){
+        window.location.href = "http://localhost:63342/baiTap/quiz/index.html?_ijt=58f2k2dg05i24qrtf2fhg73v4a"
+    }
+
+
+</script>
+</body>
+</html>
