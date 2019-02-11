@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+
+    function bai1(){
+        n = prompt("Please enter a number");
+
+        var theResult = 1;
+
+        for (var i=1;i<=n;i++){
+
+            theResult = theResult*i
+        }
+
+        document.write(theResult + "<br>");
+    }
+
+    function bai2(){
+
+        var theArray = prompt("Please enter anything you wanted").split("");
+
+        document.write(theArray.join(""),"<br>");
+        document.write(reverse(theArray).join(""),"<br>");
+
+        function reverse(a){
+            var fromLast = a.length -1;
+
+            for(var i=0;i<a.length/2;i++){
+
+                var fromFirst = a[i];
+
+                a[i] = a[fromLast -i];
+                a[fromLast -i] = fromFirst
+            }
+            return a
+        }
+    }
+
+    function bai3() {
+
+        var count = 10;
+        numb = prompt("Please enter a number!");
+
+        document.write(duplicate(numb,count),"<br>");
+
+        function duplicate(entry,loop) {
+
+            var finalNumb = entry;
+
+            for(var i=0;i<loop-1;i++){
+
+                finalNumb = finalNumb+"-"+entry
+            }
+            return finalNumb
+        }
+
+    }
+
+    function bai4(){
+
+        var name = ["anh","tien","duc","hai","nam","linh","huong","cuong"];
+
+        name.sort();
+
+        document.write(arrToString(name), "<br>")
+    }
+
+    function arrToString(arr){
+
+        var genString ="";
+
+        for(var i = 0; i< arr.length; i++){
+            genString = genString + i + " " + arr[i] + ","
+        }
+        return genString;
+    }
+
+    function bai5(){
+        input = prompt("Please enter a big number").split("");
+
+
+        document.write(input,"<br>");
+        document.write(doubleArray(input), "<br>");
+
+        function doubleArray(a){
+
+            for(i=0;i<a.length;i++){
+
+                a[i]= a[i]*2
+            }
+            return a
+        }
+
+    }
+
+    function bai6(){
+
+        input = prompt("Please enter a big number").split(" ");
+
+
+        document.write(input,"<br>");
+        document.write(takeOdd(input),"<br>");
+
+        function takeOdd(a) {
+
+            for(var i=0;i<a.length;i++){
+
+                a[i] = a[i]%2
+            }
+            return a
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>
