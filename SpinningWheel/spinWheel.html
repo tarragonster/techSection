@@ -33,10 +33,37 @@
                 <img class="firstPic" src="./img/chest.svg" alt="chest">
             </div>
             <div id="pic3">
-                <img class="firstPic" src="./img/helmet.svg" alt="helmet">
+                <img class="firstPic" src="./img/shield.svg" alt="potion">
             </div>
             <div id="pic4">
-                <img class="firstPic" src="./img/shield.svg" alt="helmet">
+                <img class="firstPic" src="./img/potion.svg" alt="shield">
+            </div>
+
+            <div id="pic5">
+                <img class="firstPic" src="./img/shield.svg" alt="shield">
+            </div>
+            <div id="pic6">
+                <img class="firstPic" src="./img/potion.svg" alt="potion">
+            </div>
+
+            <div id="pic7">
+                <img class="firstPic" src="./img/helmet.svg" alt="helmet">
+            </div>
+            <div id="pic8">
+                <img class="firstPic" src="./img/chest.svg" alt="chest">
+            </div>
+            <div id="pic9">
+                <img class="firstPic" src="./img/shield.svg" alt="chest">
+            </div>
+
+            <div id="pic10">
+                <img class="firstPic" src="./img/potion.svg" alt="potion">
+            </div>
+            <div id="pic11">
+                <img class="firstPic" src="./img/helmet.svg" alt="helmet">
+            </div>
+            <div id="pic12">
+                <img class="firstPic" src="./img/chest.svg" alt="chest">
             </div>
         </div>
         <div id="spin">
@@ -45,12 +72,49 @@
         </div>
     </div>
 
+    <div id="menu">
+
+        <div class="section">
+            <input class="contain" type="text" disabled>
+            <span class="text">Strength</span>
+            <input class="change" id="strength" type="text" disabled>
+        </div>
+
+        <div class="section">
+            <input class="contain" type="text" disabled>
+            <span class="text">Defence</span>
+            <input class="change" id="defence" type="text" disabled>
+        </div>
+
+        <div class="section">
+            <input class="contain" type="text" disabled>
+            <span class="text">Treasure</span>
+            <input class="change" id="treasure" type="text" disabled>
+        </div>
+
+        <div class="section">
+            <input class="contain" type="text" disabled>
+            <span class="text">Mana</span>
+            <input class="change" id="mana" type="text" disabled>
+        </div>
+
+
+    </div>
+
     <script>
         var wheel = document.getElementById("theWheel");
         var click = 0;
         var turn = 1800;
         var maxNum;
 
+        var strength = document.getElementById("strength");
+        var defence  = document.getElementById("defence");
+        var treasure = document.getElementById("treasure");
+        var mana = document.getElementById("mana");
+        var count1 = 0;
+        var count2 = 0;
+        var count3 = 0;
+        var count4 = 0;
 
         function startSpin(){
 
@@ -69,30 +133,44 @@
 
 
         function nextEvent(){
+
+            
             if(maxNum <= 30){
-                alert("worrier won")
+                count1 = count1 + 1;
+                strength.style.width = count1 + "%"
             }else if( maxNum <= 60){
-                alert("you got the gold")
+                count2 = count2 + 1;
+                treasure.style.width = count2 + "%"
             }else if(maxNum <= 90){
-                alert("you got the prize2")
+                count3 = count3 + 1;
+                defence.style.width = count3 + "%"
             }else if(maxNum <= 120){
-                alert("you got the prize3")
+                count4 = count4 + 1;
+                mana.style.width = count4 + "%"
             }else if(maxNum <= 150){
-                alert("you got the prize4")
+                count1 = count1 + 1;
+                strength.style.width = count1 + "%"
             }else if(maxNum <= 180){
-                alert("you got the prize5")
-            }else if(maxNum <= 210){
-                alert("you got the prize6")
+                count2 = count2 + 1;
+                treasure.style.width = count2 + "%"
+            }else if(maxNum <= 23){
+                count3 = count3 + 1;
+                defence.style.width = count3 + "%"
             }else if(maxNum <= 240){
-                alert("you got the prize7")
+                count4 = count4 + 1;
+                mana.style.width = count4 + "%"
             }else if(maxNum <= 270){
-                alert("you got the prize8")
+                count1 = count1 + 1;
+                strength.style.width = count1 + "%"
             }else if(maxNum <= 300){
-                alert("you got the prize9")
+                count2 = count2 + 1;
+                treasure.style.width = count2 + "%"
             }else if(maxNum <= 330){
-                alert("worrier 2 won")
+                count3 = count3 + 1;
+                defence.style.width = count3 + "%"
             }else{
-                alert("you got the prize11")
+                count4 = count4 + 1;
+                mana.style.width = count4 + "%"
             }
         }
 

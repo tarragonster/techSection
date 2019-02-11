@@ -5,7 +5,9 @@
 
 body{
 
+    width: 100%;
     background-image: url("./img/background..jpg");
+
 }
 
 
@@ -35,9 +37,9 @@ body{
 }
 #pic1{
     position: absolute;
-    max-width: 16%;
+    max-width: 13%;
     top: 6%;
-    left: 33%;
+    left: 34%;
     transform: rotate(-15deg);
 }
 #pic2{
@@ -49,18 +51,77 @@ body{
 }
 #pic3 {
     position: absolute;
-    max-width: 16%;
-    top: 16%;
-    left: 68%;
+    max-width: 13%;
+    top: 15%;
+    left: 71%;
     transform: rotate(45deg);
 }
 #pic4 {
     position: absolute;
-    max-width: 15%;
+    max-width: 13%;
     top: 6%;
-    left: 52%;
+    left: 53%;
     transform: rotate(15deg);
 }
+
+#pic5 {
+    position: absolute;
+    max-width: 13%;
+    top: 33%;
+    left: 9%;
+    transform: rotate(-75deg);
+}
+#pic6 {
+    position: absolute;
+    max-width: 13%;
+    top: 52%;
+    left: 9%;
+    transform: rotate(-105deg);
+}
+#pic7 {
+    position: absolute;
+    max-width: 13%;
+    top: 68%;
+    left: 18%;
+    transform: rotate(-135deg);
+}
+
+#pic8 {
+    position: absolute;
+    max-width: 13%;
+    top: 79%;
+    left: 34%;
+    transform: rotate(-165deg);
+}
+#pic9 {
+    position: absolute;
+    max-width: 13%;
+    top: 79%;
+    left: 53%;
+    transform: rotate(-195deg);
+}
+#pic10 {
+    position: absolute;
+    max-width: 13%;
+    top: 69%;
+    left: 70%;
+    transform: rotate(-225deg);
+}
+#pic11 {
+    position: absolute;
+    max-width: 13%;
+    top: 53%;
+    left: 80%;
+    transform: rotate(-255deg);
+}
+#pic12 {
+    position: absolute;
+    max-width: 13%;
+    top: 33%;
+    left: 81%;
+    transform: rotate(-285deg);
+}
+
 .firstPic{
     width: 100%;
 
@@ -86,40 +147,40 @@ body{
 
 .half1 div.section:nth-child(1){
 
-    background-color: #8E2800;
+    background-color: #FFF0A5;
 
 }
 .half1 div.section:nth-child(2){
 
-    background-color: #B64926;
+    background-color: #1E2D40;
     transform: rotate(30deg);
 
     transform-origin: 100% 100%;
 }
 .half1 div.section:nth-child(3){
 
-    background-color: #FFB03B;
+    background-color: #8E2800;
     transform: rotate(60deg);
 
     transform-origin: 100% 100%;
 }
 .half1 div.section:nth-child(4){
 
-    background-color: #FFF0A5;
+    background-color: #468966;
     transform: rotate(90deg);
 
     transform-origin: 100% 100%;
 }
 .half1 div.section:nth-child(5){
 
-    background-color: #572200;
+    background-color: #FFF0A5;
     transform: rotate(120deg);
 
     transform-origin: 100% 100%;
 }
 .half1 div.section:nth-child(6){
 
-    background-color: #BF883C;
+    background-color: #1E2D40;
     transform: rotate(150deg);
 
     transform-origin: 100% 100%;
@@ -148,35 +209,35 @@ body{
 }
 .half2 div.section:nth-child(2){
 
-    background-color: #1E2D40;
+    background-color: #8E2800;
     transform: rotate(-30deg);
 
     transform-origin: 100% 0%;
 }
 .half2 div.section:nth-child(3){
 
-    background-color: #87B2A1;
+    background-color: #1E2D40;
     transform: rotate(-60deg);
 
     transform-origin: 100% 0%;
 }
 .half2 div.section:nth-child(4){
 
-    background-color: #F2CF66;
+    background-color: #FFF0A5;
     transform: rotate(-90deg);
 
     transform-origin: 100% 0%;
 }
 .half2 div.section:nth-child(5){
 
-    background-color: #28403D;
+    background-color: #468966;
     transform: rotate(-120deg);
 
     transform-origin: 100% 0%;
 }
 .half2 div.section:nth-child(6){
 
-    background-color: #635F9C;
+    background-color: #8E2800;
     transform: rotate(-150deg);
 
     transform-origin: 100% 0%;
@@ -239,4 +300,39 @@ body{
     transform: rotate(45deg);
     left: 1.5vw;
     animation: test 0.5s ;
+}
+
+#menu{
+    width: 30%;
+    margin-left: 50%;
+}
+.contain{
+    width: 40%;
+    padding-top: 1.5%;
+    position: relative;
+    border-style: solid;
+    border-color: #0A2140;
+    border-width: 0.1vw;
+    border-radius: 2vw;
+    background-color: transparent;
+}
+.change{
+    text-decoration: none;
+    position: absolute;
+    left: calc(50% + 0.1vw);
+    padding-top: 0.6%;
+    background-color: #0A2140;
+    width: 0;
+    border-width: 0;
+    border-bottom-left-radius: 2vw;
+    border-top-left-radius: 2vw;
+
+}
+.section{
+    margin-top: 3%;
+}
+
+.text{
+    font-weight: bold;
+    color: #0A2140;
 }
