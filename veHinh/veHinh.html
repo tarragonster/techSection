@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    function bai1(){
+    function printTrigangle(){
 
         var n = prompt("Please enter 1 side of the triangle");
 
@@ -28,7 +28,7 @@
         }
     }
 
-    function bai2(){
+    function printEmptyRectangle(){
 
         width = prompt("Please enter the width of rectangle");
         height = prompt("Please enter the height of rectangle");
@@ -39,19 +39,20 @@
 
     function theRectangle(a,b){
 
-        doPrint("*",a);
+        doPrint("*&nbsp",a);
         document.write("<br>");
 
         for (var i=0; i<b-2;i++){
             doPrint("*",1);
-            doPrint("&nbsp;&nbsp",a-2);
+            doPrint("&nbsp;&nbsp;&nbsp",a-2);
+            document.write("&nbsp");
             doPrint("*",1);
             document.write("<br>")
         }
-        doPrint("*",a);
+        doPrint("*&nbsp",a);
     }
 
-    function bai3(){
+    function printSpecialTrigangle(){
 
         var height = prompt("Please enter a number");
 
@@ -72,7 +73,7 @@
         }
     }
 
-    function bai4(){
+    function printX(){
 
         var n = prompt("Please enter a number");
 
@@ -113,35 +114,42 @@
         return genString;
     }
 
-    function bai5(){
+    function printButterfly(){
 
-        var k = prompt("Try enter a number, please!");
+        var k = prompt("Try enter an odd number, please!");
 
         document.write(butterfly(k));
     }
 
     function butterfly(theNum){
+        var theArray = [];
+        var display = "";
 
-        var theArr = [];
-        var illust = "";
-        var proxy = [];
+        for (var j= 0; j<theNum/2;j++){
+            theArray[j] = [];
+            for (var i= 0;i<theNum;i++){
 
-        for (var i=0;i<theNum;i++){
-            theArr[i] = [];
-            for (var j=0;j<theNum;j++){
-
-                if(j == i || j == theNum-i-1){
-                    theArr[i][j] = "*"
+                if(i <= j || i >= theNum-j-1){
+                    theArray[j][i]="*";
                 }else{
-                    theArr[i][j] = "&nbsp;&nbsp"
+                    theArray[j][i] = "&nbsp;&nbsp"
+                }
+            }
+            for(var h = theNum-1; h>theNum/2; h--){
+                theArray[h] = [];
+                for(var c=0;c<theNum;c++){
+                    if(c>= h || c<= theNum-h-1){
+                        theArray[h][c]="*"
+                    }else{
+                        theArray[h][c]="&nbsp;&nbsp"
+                    }
                 }
             }
         }
-        for (var t =0; t<i;t++){
-
-            illust = illust + arrToString(theArr[t]) + "<br>";
+        for (var t =0; t<theNum;t++){
+            display = display + arrToString(theArray[t]) + "<br>";
         }
-        return illust;
+        return display
     }
 
 </script>
