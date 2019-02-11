@@ -1,0 +1,152 @@
+@font-face{
+    font-family: meFont;
+    src: url('../font/verdana.ttf') format("truetype");
+}
+@font-face {
+    font-family: otherFont;
+    src: url('../font/aqua.ttf') format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.banner{
+    width: 100%;
+}
+
+.banner img{
+    max-width: 100%;
+    max-height: 100%;
+    border: 2px solid #C69321;
+}
+
+.wrap{
+    width: 100%;
+    position: relative;
+    padding: 0 7%;
+}
+
+.menu{
+    width: 80%;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: #E5C492;
+    font-size: 1.2vw;
+    background: #20535E;
+    padding: 1% 1.2%;
+    padding-bottom: 0.8%;
+    border-radius: 5px;
+
+    font-family: otherFont;
+    margin-left: 2%;
+}
+
+.menu a:hover{
+    color: #C69321;
+}
+
+
+.disImage{
+    position: relative;
+    left: 47%;
+
+}
+
+.hoverLogo{
+    position: absolute;
+    visibility: hidden;
+    left: 47%;
+    opacity: 0;
+    transition: visibility 0s ease-in-out 300ms, opacity 1s;
+}
+
+.logo:hover .hoverLogo{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s ease-in-out 300ms, opacity 300ms
+}
+.name{
+    position: absolute;
+    left: 25%;
+    top: 2%;
+    width: 50%;
+    right: 20%;
+}
+
+.name img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.mission{
+    padding: 3% 7%;
+
+    margin: auto;
+
+    color: #E5C492;
+    font-family: meFont;
+    overflow: visible;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    padding: 0 7%;
+    margin: auto;
+    color: #E5C492;
+    font-family: meFont;
+
+}
+.clear :after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.top{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.image{
+
+    width: 20%;
+    float: left;
+    padding: 0 3%;
+
+}
+.image img{
+    max-width: 100%;
+    max-height: 100%;
+    border: 3px solid #20535E;
+    opacity: 1;
+    transition: opacity 0.4s linear;
+}
+
+.image img:hover{
+    opacity: 0.7;
+}
+.image a{
+    text-decoration: none;
+    text-align: center;
+    color: #E5C492;
+
+}
+
+.image a:hover{
+    color: #C69321;
+}
