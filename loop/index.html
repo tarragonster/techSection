@@ -48,7 +48,7 @@
 
         document.write(duplicate(numb,count),"<br>");
 
-        function duplicate(entry,loop) {
+        function duplicate(entry,index) {
 
             var finalNumb = entry;
 
@@ -58,7 +58,6 @@
             }
             return finalNumb
         }
-
     }
 
     function bai4(){
@@ -81,7 +80,7 @@
     }
 
     function bai5(){
-        input = prompt("Please enter a big number").split("");
+        var input = prompt("Please enter a big number").split("");
 
 
         document.write(input,"<br>");
@@ -100,7 +99,7 @@
 
     function bai6(){
 
-        input = prompt("Please enter a big number").split(" ");
+        var input = prompt("Please enter a big number").split(" ");
 
 
         document.write(input,"<br>");
