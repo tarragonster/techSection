@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@font-face{
+    font-family: "Rodin";
+    src: url("../font/rodin.TTF");
+}
+
+
+body{
+    background: #9E9B88;
+    font-family: "Rodin";
+}
+
+#container{
+    position: relative;
+    margin-top: 10%;
+    margin-left: 25%;
+    margin-right: 51%;
+}
+#question{
+    color: #434144;
+    background: #B2AD98;
+    text-align: center;
+    padding: 3%;
+    margin-bottom: 3%;
+    font-size: 1.2vw;
+}
+
+.button{
+    outline: none;
+    text-decoration: none;
+    font-family: "Rodin";
+    width: 100%;
+    margin-top: 2%;
+    padding: 1.8%;
+    font-size: 1.1vw;
+    text-align: left;
+    color: #434144;
+    border-style: none;
+    background: none;
+    cursor: pointer;
+}
+#set{
+    background: #D6D1B8;
+}
+#box{
+    position: absolute;
+    width: 90%;
+    padding-bottom: 63%;
+    left: 103%;
+    top: 0;
+    border-style: none;
+    background: #D6D1B8;
+}
+
+#box span{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-size: 1vw;
+}
+
+.hover:hover{
+    color: #D6D1B8;
+    background: #48453C;
+}
+
+#errorButton{
+    position: absolute;
+    left: 103%;
+    bottom: 0;
+    text-align: center;
+    width: 90%;
+    background: #D6D1B8;
+    color: #434144;
+}
+.button:active{
+    color: #434144;
+    background: #D6D1B8;
+}
+#congrats{
+    text-align: center;
+    margin-top: 20%;
+    font-size: 1.7vw;
+    background: #D6D1B8;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 2vw;
+}
+#changeTheme{
+    position: absolute;
+    left: 0;
+    bottom: 104%;
+    text-align: center;
+    width: 31%;
+    background: #263446;
+    color: white;
+    padding-top: 3%;
+}
