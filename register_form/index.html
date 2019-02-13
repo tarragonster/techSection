@@ -2,9 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>register</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
+    <div class="wrap">
+        <div id="content">
+            <h1 id="header">Phiếu đăng ký</h1> <br>
+            <form id="form" action="success.html">
+                <input class="box" type="text" name="name" placeholder="Họ tên"><br>
+                <input class="box" type="text" name="email" placeholder="Email"><br>
+                <input class="box" type="password" name="password" placeholder ="Mật khẩu"><br>
+                <input class="box" type="text" name="phone" placeholder="Điện thoại"><br>
+                <input class="box" type="text" name="address" placeholder="Địa chỉ"><br>
+
+
+                    <select class="option" name="day" id="day">
+                        <option value="day">Ngày</option>
+                    </select>
+                    <select class="option" name="month" id="month">
+                        <option value="month">Tháng</option>
+                    </select>
+                    <select class="option" name="year" id="year">
+                        <option value="year">Năm</option>
+                    </select><br>
+
+                <input class="radio" type="radio" name="gender" id="male" value="male">
+                <label class="label" for="male">Nam</label>
+                <input class="radio" type="radio" name="gender" id="female" value="female">
+                <label class="label" for="female">Nữ</label>
+                <input class="radio" type="radio" name="gender" id="other" value="other">
+                <label class="label" for="other">Khác</label><br>
+
+                <input id="register" type="submit" name="dang ky" value="Đăng ký">
+            </form>
+        </div>
+    </div>
+<script>
+
+    element();
+    elementMonth();
+    elementYear();
+
+    function element(){
+
+                for(var i=31;i>=1;i--){
+                    var x = document.createElement("option");
+                    x.setAttribute("class","childOption");
+                    var t = document.createTextNode(i.toString());
+
+                    x.appendChild(t);
+                    document.getElementById("day").appendChild(x)
+            }
+    }
+
+    function elementMonth(){
+
+        for(var i=12;i>=1;i--){
+            var x = document.createElement("option");
+            x.setAttribute("class","monthOption");
+            var t = document.createTextNode(i.toString());
+
+            x.appendChild(t);
+            document.getElementById("month").appendChild(x)
+        }
+    }
+
+    function elementYear(){
+
+        for(var i=2019;i>=1905;i--){
+            var x = document.createElement("option");
+            x.setAttribute("class","yearOption");
+            var t = document.createTextNode(i.toString());
+
+            x.appendChild(t);
+            document.getElementById("year").appendChild(x)
+        }
+    }
+
+
+
+</script>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
 
 </body>
 </html>
