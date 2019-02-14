@@ -92,3 +92,13 @@ body{
     padding-bottom: 1%;
     border-radius: 2vw;
 }
+#changeTheme{
+    position: absolute;
+    left: 0;
+    bottom: 104%;
+    text-align: center;
+    width: 31%;
+    background: #263446;
+    color: white;
+    padding-top: 3%;
+}
