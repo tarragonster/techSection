@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+    <h1>Bảng thông tin hotgirl</h1>
+    <div id="wrap">
+        <table id="myTable">
+            <thead>
+            <tr>
+                <th id="name" onclick="sortTable(0)">Tên <img id="icon1" class="icon" src="img/sort-arrows-couple-pointing-up-and-down.png" alt=""></th>
+                <th id="gender" onclick="sortTable(1)">Giới tính <img id="icon2" class="icon" src="img/sort-arrows-couple-pointing-up-and-down.png" alt=""></th>
+                <th id="fb" onclick="sortTable(2)">Facebook<img id="icon3" class="icon" src="img/sort-arrows-couple-pointing-up-and-down.png" alt=""></th>
+                <th id="phone" onclick="sortTable(3)">Điện thoại<img id="icon4" class="icon" src="img/sort-arrows-couple-pointing-up-and-down.png" alt=""></th>
+                <th>Ảnh</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="Row">
+                <td>Mai Anh</td>
+                <td>Nữ</td>
+                <td><a href="https://www.facebook.com/quanghuy.me?ref=br_rs">Link fb em nó</a></td>
+                <td>09123754332</td>
+                <td><img class="picture" src="img/trung_quoc.jpg" alt="Mai Anh"></td>
+            </tr>
+            <tr class="Row">
+                <td>Hoàng Anh</td>
+                <td>Nữ</td>
+                <td><a href="http://kenh14.vn/gai-xinh-lop-11-gay-bao-cong-dong-mang-vi-buc-anh-chup-len-trong-luc-bi-phat-20190211170353785.chn">Click nhanh</a></td>
+                <td>09893728374</td>
+                <td><img class="picture" src="img/hoang_anh.jpg" alt="Hoàng Anh"></td>
+            </tr>
+            <tr class="Row">
+                <td>Chi Chi</td>
+                <td>Nam</td>
+                <td><a href="http://video.kenh14.vn/nhan-sac-goi-cam-cua-de-nhat-hot-girl-lao-ve-viet-nam-an-tet-dang-anh-check-in-gay-sot-229942.chn">Nhấp nhanh</a></td>
+                <td>09029384930</td>
+                <td><img class="picture" src="img/chichi.jpg" alt="Chi Chi"></td>
+            </tr>
+            <tr class="Row">
+                <td>Khả Ngân</td>
+                <td>Nữ</td>
+                <td><a href="http://kenh14.vn/fashion/diem-danh-style-trang-diem-dac-trung-cua-hot-girl-viet-han-va-nhat-20150303100344370.chn">Nhanh tay</a></td>
+                <td>09990483288</td>
+                <td><img class="picture" src="img/kha_ngan.jpg" alt="Khả Ngân"></td>
+            </tr>
+            <tr class="Row">
+                <td>Irene</td>
+                <td>Nữ</td>
+                <td><a href="http://kenh14.vn/gan-5-nam-debut-irene-red-velvet-van-chua-bao-gio-dam-lam-dieu-nay-20190206135035578.chn">ko có đâu</a></td>
+                <td>09118322933</td>
+                <td><img class="picture" src="img/irene.jpg" alt="Irene"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        var click = 0;
+
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable");
+            switching = true;
+            dir = "asc";
+
+            while (switching) {
+
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+
+                    shouldSwitch = false;
+
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+
+                    switchcount ++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+
+    <script>
+        $('#name').on("click",function () {
+            click++;
+            $('#icon2').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon3').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon4').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            if(click%2 !==0){
+                $('#icon1').attr('src',"img/down.png")
+            }else{
+                $('#icon1').attr('src',"img/up.png")
+            }
+        });
+
+        $('#gender').on("click",function () {
+            click++;
+            $('#icon1').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon3').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon4').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            if(click%2 !==0){
+                $('#icon2').attr('src',"img/down.png")
+            }else{
+                $('#icon2').attr('src',"img/up.png")
+            }
+        });
+
+        $('#fb').on("click",function () {
+            click++;
+            $('#icon2').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon1').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon4').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            if(click%2 !==0){
+                $('#icon3').attr('src',"img/down.png")
+            }else{
+                $('#icon3').attr('src',"img/up.png")
+            }
+        });
+
+        $('#phone').on("click",function () {
+            click++;
+            $('#icon2').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon3').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            $('#icon1').attr('src',"img/sort-arrows-couple-pointing-up-and-down.png");
+            if(click%2 !==0){
+                $('#icon4').attr('src',"img/down.png")
+            }else{
+                $('#icon4').attr('src',"img/up.png")
+            }
+        })
+    </script>
+
+</body>
+</html>
