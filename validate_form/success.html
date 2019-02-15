@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>success</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <p id="prompt">Chúc mừng, Bạn đã đăng nhập thành công</p>
+    <div id="wrap">
+        <p id="index"></p>
+    </div>
+<script>
+
+    convertUrl();
+
+    function convertUrl(){
+
+        var theUrl = String(decodeURIComponent(window.location.href));
+
+        var theNewUrl1 = theUrl.replace(/&/g,'<br>').replace(/\+/g,' ').replace(/=/g,': ');
+
+        document.getElementById('index').innerHTML = theNewUrl1.substr(theNewUrl1.indexOf("?")+1, theNewUrl1.lastIndexOf(""))
+
+
+
+    }
+
+</script>
+
+
+
+</body>
+</html>
