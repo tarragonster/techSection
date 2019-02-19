@@ -112,7 +112,7 @@
             }else{
                 $('#password').next('label').text('');
             }
-            if($('#phone').val().trim() ==''){
+            if($('#phone').val().trim() =='' || isNaN($('#phone').val().trim())){
                 $('#phone').next('label').text('Điện thoại điện thoại không hợp lệ');
                 isValid = false
             }else{
@@ -124,7 +124,7 @@
             }else{
                 $('#address').next('label').text('');
             }
-            if($('#facebook').val().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/) == null){
+            if($('#facebook').val().trim() == ''){
                 $('#facebook').next('label').text('Facebook không hợp lệ');
                 isValid = false
             }else{
@@ -136,9 +136,9 @@
             }else{
                 $('#email').next('label').text('');
             }
-            if($('#day').val() == "day" || $('#month').val() == "month" ||
-                $('#year').val() == "year"){
-                $('.option').next('span').text('Ngày tháng năm sinh không hợp ');
+            if($('#day').val() == "Day" || $('#month').val() == "Month" ||
+                $('#year').val() == "Year"){
+                $('#validate7').text('Ngày tháng năm sinh không hợp ');
                 isValid = false
             }else{
                 $('.option').next('span').text('');
