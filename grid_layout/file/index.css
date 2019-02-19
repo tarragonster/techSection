@@ -1,0 +1,189 @@
+@font-face{
+    font-family: meFont;
+    src: url('../font/verdana.ttf') format("truetype");
+}
+@font-face {
+    font-family: otherFont;
+    src: url('../font/aqua.ttf') format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.banner{
+    width: 100%;
+    margin: auto;
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+    border: 0.2vw solid #C69321;
+}
+
+.menu{
+    width: 58%;
+    position: absolute;
+    bottom: 10%;
+    left: 21%;
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: #E5C492;
+    font-size: 1.2vw;
+    background: #20535E;
+    padding: 0.7vw;
+    border-radius: 0.5vw;
+
+    font-family: otherFont;
+    margin-left: 1vw;
+}
+
+.menu a:hover{
+    color: #C69321;
+}
+
+.logo{
+    margin-top: 3%;
+    margin-left: 48%;
+    margin-right: 45%;
+}
+
+.disImage{
+    position: relative;
+    width: 5.3vw;
+}
+
+.hoverLogo{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 48%;
+    right: 45%;
+    width: 5.3vw;
+    transition: visibility 0s ease-in-out 300ms, opacity 1s;
+}
+
+
+.logo:hover .hoverLogo{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s ease-in-out 300ms, opacity 300ms
+}
+.name{
+    position: absolute;
+    left: 30%;
+    top: 11%;
+    width: 42%;
+}
+
+.name img{
+    width: 100%;
+
+}
+
+.mission{
+
+    color: #E5C492;
+    font-family: meFont;
+    overflow: visible;
+    font-size: 15px;
+}
+.container-fluid{
+    padding: 0;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    color: #E5C492;
+    font-family: meFont;
+
+}
+
+.clear :after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.top{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.image{
+    width: 20%;
+    padding: 0 3%;
+
+}
+.col-md-3 img{
+    max-width: 100%;
+    max-height: 100%;
+    border: 0.2vw solid #20535E;
+    opacity: 1;
+    transition: opacity 0.4s linear;
+}
+
+.image img:hover{
+    opacity: 0.7;
+}
+.col-md-3 a{
+    text-decoration: none;
+    text-align: center;
+    color: #E5C492;
+    font-size: 20px;
+
+}
+
+.image a:hover{
+
+    color: #C69321;
+
+}
+.navbar-brand{
+    font-family: meFont
+}
+
+.nav-item{
+    font-family: meFont
+}
+
+.img-fluid{
+    width: 100%;
+}
+
+@media only screen and (max-width: 992px){
+
+    .des{
+        font-size: 15px;
+    }
+    .mission{
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+
+    .des{
+        font-size: 12px;
+    }
+    .mission{
+        font-size: 10px;
+    }
+
+}
