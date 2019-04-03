@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+
+</head>
+<body>
+<div class="wrap">
+    <div id="content">
+        <h1 id="header">Phiếu đăng ký</h1> <br>
+        <form id="formRegister" action="index.html">
+            <input class="box" id="name" type="text" name="Name" placeholder="Họ tên">
+            <label id="validate1" for="name"></label> <br>
+
+            <input class="radio" type="radio" name="Gender" id="male" value="male">
+            <label class="label" for="male">Nam</label>
+            <input class="radio" type="radio" name="Gender" id="female" value="female">
+            <label class="label" for="female">Nữ</label>
+            <input class="radio" type="radio" name="Gender" id="other" value="other">
+            <label class="label" for="other">Khác</label>
+            <span id="validate8"></span><br>
+
+            <input class="box" id="facebook" type="text" name="Facebook" placeholder="Facebook">
+            <label id="validate6" for="facebook"></label><br>
+            <input class="box" id="phone" type="text" name="Phone" placeholder="Điện thoại">
+            <label id="validate4" for="phone" ></label><br>
+
+            <input id="register" type="button" name="resign" value="Đăng ký" onclick="createUser()">
+        </form>
+    </div>
+</div>
+<script>
+
+    element();
+    elementMonth();
+    elementYear();
+
+    function element(){
+
+        for(var i=31;i>=1;i--){
+            var x = document.createElement("option");
+            x.setAttribute("class","childOption");
+            var t = document.createTextNode(i.toString());
+
+            x.appendChild(t);
+            document.getElementById("day").appendChild(x)
+        }
+    }
+
+    function elementMonth(){
+
+        for(var i=12;i>=1;i--){
+            var x = document.createElement("option");
+            x.setAttribute("class","monthOption");
+            var t = document.createTextNode(i.toString());
+
+            x.appendChild(t);
+            document.getElementById("month").appendChild(x)
+        }
+    }
+
+    function elementYear(){
+
+        for(var i=2019;i>=1905;i--){
+            var x = document.createElement("option");
+            x.setAttribute("class","yearOption");
+            var t = document.createTextNode(i.toString());
+
+            x.appendChild(t);
+            document.getElementById("year").appendChild(x)
+        }
+    }
+
+</script>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+</script>
+
+<script>
+    $('#formRegister').on('submit',function(){
+        var isValid = true;
+        if($('#name').val().trim() ==''){
+            $('#name').next('label').text('Họ tên không hợp lệ');
+            isValid = false
+        }else{
+            $('#name').next('label').text('');
+        }
+
+        if($('#phone').val().trim() =='' || isNaN($('#phone').val().trim())){
+            $('#phone').next('label').text('Điện thoại điện thoại không hợp lệ');
+            isValid = false
+        }else{
+            $('#phone').next('label').text('');
+        }
+        if($('#facebook').val().trim() == ''){
+            $('#facebook').next('label').text('Facebook không hợp lệ');
+            isValid = false
+        }else{
+            $('#facebook').next('label').text('');
+        }
+        if($('.radio:checked').length == 0){
+            $('.label').next('span').text('Cần chọn thông tin giới tính');
+            isValid = false
+        }
+        return isValid;
+    });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

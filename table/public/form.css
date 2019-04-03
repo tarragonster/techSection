@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body{
+    /*background: black;*/
+}
+
+#content{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#content h1{
+    margin-top: 5%;
+    font-size: 2vw;
+    color: #8B8C81;
+}
+.box{
+    position: relative;
+    outline: none;
+    width: 60%;
+    margin-top: 2%;
+    padding: 2%;
+    border-style: solid;
+    border-width: thin;
+    border-color: #8B8C81;
+    color: #8B8C81;
+    font-size: 1.2vw;
+    border-radius: 0.5vw;
+}
+.option{
+    padding: 2%;
+    margin-top: 3%;
+    position: relative;
+    width: 21%;
+    background-color: #8B8C81;
+    color: white;
+    font-size: 1.1vw;
+    border-radius: 0.7vw;
+    cursor: pointer
+}
+
+.radio{
+    margin-top: 3%;
+    width: 4%;
+    margin-left: 2%;
+    margin-right: 1%;
+    position: relative;
+    left: -6%;
+    cursor: pointer
+}
+
+.label{
+    position: relative;
+    left: -7%;
+    font-weight: bolder;
+    color: #8B8C81;
+    cursor: pointer;
+}
+#register{
+
+    margin-top: 5%;
+    padding: 3%;
+    width: 64%;
+    border-radius: 2vw;
+    border-style: none;
+    background-color: #8C031C;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2vw;
+    cursor: pointer;
+}
+#prompt{
+    text-align: center;
+    font-size: 2vw;
+    color: #8B8C81;
+    margin-top: 10%;
+}
+#validate1{
+    position: absolute;
+    left: 60%;
+    top: 14%;
+    color: #8C031C;
+}
+#validate2{
+    position: absolute;
+    left: 60%;
+    top: 21%;
+    color: #8C031C;
+}
+#validate3{
+    position: absolute;
+    left: 60%;
+    top: 28%;
+    color: #8C031C;
+}
+#validate4{
+    position: absolute;
+    left: 60%;
+    top: 35%;
+    color: #8C031C;
+}
+#validate5{
+    position: absolute;
+    left: 60%;
+    top: 42%;
+    color: #8C031C;
+}
+#validate6{
+    position: absolute;
+    left: 60%;
+    top: 49%;
+    color: #8C031C;
+}
+#validate7{
+    position: absolute;
+    left: 60%;
+    top: 56%;
+    color: #8C031C;
+}
+#validate8{
+    position: absolute;
+    left: 60%;
+    top: 62%;
+    color: #8C031C;
+}
+#wrap{
+    position: relative;
+}
+
+#index{
+    margin-top: 5%;
+    position: absolute;
+    width: 30%;
+    left: 33%;
+    border-style: solid;
+    border-width: thin;
+    border-color: #6A5957;
+    padding: 1.5%;
+    color: #6A5957;
+}
